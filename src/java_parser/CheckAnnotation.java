@@ -28,6 +28,9 @@ public class CheckAnnotation {
         mRequiredMemberList = new ArrayList<RequiredMember>();
         mRequiredMethodList = new ArrayList<RequiredMethod>();
     }
+     public CheckAnnotation(String str) {
+        
+    }
     
     private void readFile() throws IOException {
         BufferedReader buffer = getBufferReaderFile("/Users/manny/NetBeansProjects/CodeRoomDev/src/test.java");

@@ -11,7 +11,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 /**
  *
  * @author sunday
@@ -28,28 +30,31 @@ public class CheckAnnotation {
         mRequiredMemberList = new ArrayList<RequiredMember>();
         mRequiredMethodList = new ArrayList<RequiredMethod>();
     }
-     public CheckAnnotation(String str) {
-        
-    }
+//     public CheckAnnotation(String str) {
+//        
+//    }
     
-    private void readFile() throws IOException {
+    public void readFile() throws IOException {
         BufferedReader buffer = getBufferReaderFile("/Users/manny/NetBeansProjects/CodeRoomDev/src/test.java");
         checkLine(buffer);
         printRequiredClassList();
+        System.out.println();
         printRequiredMemberList();
+        System.out.println();
         printRequiredMethodList();
     }
     
     private void checkLine(BufferedReader buffer) throws IOException {
         String line = buffer.readLine();
-        
+       
         while (line != null) {
             if (!isAnnotationLineRequirement(line)) {
                 line = buffer.readLine();
                 continue;
             }
             
-            line = buffer.readLine().trim();
+            line = buffer.readLine().replaceAll("//.*|/\\*((.|\\n)(?!=*/))+\\*/", "").trim();
+            System.out.println(line);
             saveRequirement(line);
         } 
     }
@@ -78,23 +83,37 @@ public class CheckAnnotation {
 //            RequiredMethod requireMethod = new RequiredMethod(lineArray[0], lineArray[1] , lineArray[2], paramsType);
         }
     }
+
+    private String processExtractClassName(String word) {
+        word = word.replaceAll("\\p{Punct}", "");
+        word = word.replaceAll("class", "");
+        word = word.replaceAll("\\s+"," ").trim();
+
+        return word;
+    }
     
     private RequiredClass separaterClass(String word) {
+      
+        word = processExtractClassName(word);
+        
+        //  word = word.replaceAll("\\p{Punct}", "");
+        // word = word.replaceAll("class", "");
+        // word = word.replaceAll("\\s+"," ").trim();
+        
+        System.out.println(word);
         String[] words = word.split(" ");
 
-        if (words.length == 4){
-            return new RequiredClass(words[0], words[2]);
+        if (words.length >= 2){
+            return new RequiredClass(words[0], words[1]);
         }
         
-        return new RequiredClass("", words[1]);
+        return new RequiredClass("", words[0]);
     }
     
     private RequiredMember separaterMember(String word) {
+        word = removeSymbol(word,"\\p{Punct}", "");
         String[] words = word.split(" ");
-        
-        if (isSymbolEqual(words)) {
-            return separaterMemberHaveASymbol(words);
-        }
+       
         return separaterMemberNotHaveASymbol(words);
     }
     
@@ -103,13 +122,6 @@ public class CheckAnnotation {
         
         ParamsType[] paramsType = paramsSeparater(words);
         return new RequiredMethod(words[0], words[1] , words[2], paramsType);
-    }
-    
-    private RequiredMember separaterMemberHaveASymbol (String[] words) {      
-        if (words.length == 4) {
-            return new RequiredMember("", words[0], words[1]);
-        }
-        return new RequiredMember(words[0], words[1], words[2]);
     }
     
     private RequiredMember separaterMemberNotHaveASymbol (String[] words) {
@@ -130,12 +142,10 @@ public class CheckAnnotation {
                isBracket = true;
                String datatypeParam = changLineToDataType(line[index++], 1);
                String nameParam = changLineToNameParam(line[index]);
-               System.out.println(changLineToNameParam(line[index]));
                paramsType[count++] = new ParamsType(datatypeParam, nameParam); 
            }else if(isBracket == true){
                String datatypeParam = changLineToDataType(line[index++], 0);
                String nameParam  = changLineToNameParam(line[index]);
-               System.out.println(changLineToNameParam(line[index]));
                paramsType[count++] = new ParamsType(datatypeParam, nameParam); 
            }
        }
@@ -156,6 +166,10 @@ public class CheckAnnotation {
             return "default";
         }
         return word;
+    }
+
+    private String removeSymbol(String word, String regex, String wordRepalce) {
+        return word.replaceAll(regex, wordRepalce);
     }
     private int checkLastWord(String word) {
         for(int index = 0 ; index < word.length() ; ++index) {
@@ -230,11 +244,11 @@ public class CheckAnnotation {
         System.out.println("Method");
         for(int index = 0 ; index < mRequiredMethodList.size() ; ++index) {
             System.out.print("Modifier : " + mRequiredMethodList.get(index).getModifier());
-            System.out.print(", ReturnType : " + mRequiredMethodList.get(index).getReturnType());
+            System.out.print(" , ReturnType : " + mRequiredMethodList.get(index).getReturnType());
             System.out.println(" , Name : "+ mRequiredMethodList.get(index).getName());
-            for(int i = 0 ; i < mRequiredMethodList.get(index).getParams().length ; ++i) {
-                System.out.print(" , DatatypeParms : " + mRequiredMethodList.get(index).getParams()[i].getDataType());
-                System.out.print(" , NameParams : " + mRequiredMethodList.get(index).getParams()[i].getName());
+            for(int i = 0 ; i < mRequiredMethodList.get(index).getParams().length  && mRequiredMethodList.get(index).getParams()[i] !=null ; ++i) {
+                System.out.print(" \t   DatatypeParms : " + mRequiredMethodList.get(index).getParams()[i].getDataType());
+                System.out.println(" , NameParams : " + mRequiredMethodList.get(index).getParams()[i].getName());
             }
             System.out.println();
         }

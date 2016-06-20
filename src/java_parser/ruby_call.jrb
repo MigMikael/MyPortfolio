@@ -1,0 +1,11 @@
+ require 'java'
+System.out.println("5555");
+# new CheckAnnotation().readFile()
+# class Main
+#   def run   
+#      Obj = Java::CheckAnnotation.new
+#      Obj.readFile()
+#   end
+# end
+# app = Main.new
+# app.run

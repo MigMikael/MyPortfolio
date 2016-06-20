@@ -20,17 +20,20 @@ public class test {
     
     }
     @Require
-    public class B {
+    public class B /*test*/ {
         
     }
     @Require
-    public int x = 0;
+    public int x = 0 ;
     
     @Require
     private double man;
+
+    @Require
+    float bo ;
   
     @Require
-    public String printV1 (String[] x, int y) {
+    public static String printV1 (String[] x/*test*/, int y) { // 55555
         return "";
     }
     

@@ -3586,3 +3586,53 @@ Completed 200 OK in 173ms (Views: 0.1ms | ActiveRecord: 0.0ms)
 Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:24:15 +0700
 Processing by AnnotationController#call_java_check as JSON
 Completed 200 OK in 175ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:29:37 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 149ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:34:26 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 125ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:34:29 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 125ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:35:51 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 113ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:36:14 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 127ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:36:54 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 128ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:39:26 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 139ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:40:12 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 121ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:40:14 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 124ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/services_java_annotation.json" for ::1 at 2016-06-25 22:45:10 +0700
+Processing by AnnotationController#call_java_check as JSON
+Completed 200 OK in 119ms (Views: 0.1ms | ActiveRecord: 0.0ms)

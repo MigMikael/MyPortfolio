@@ -1,8 +1,8 @@
 class AnnotationController < ApplicationController
 require 'json'
   def call_java_check
-    output = `java -cp "/Users/manny/Documents/Work/ruby/CodeRoomDev/build/classes" java_parser.CheckAnnotation`
-    text_file = File.new('/Users/manny/Documents/Work/ruby/CodeRoomDev/CodeRoomDev/json_file.txt', "r").read
+    output = `java -cp "/Users/manny/Documents/Work/ruby/CodeRoomDev_java/build/classes" java_parser.CheckAnnotation`
+    text_file = File.new('/Users/manny/Documents/Work/ruby/CodeRoomDev/CodeRoomDev_java/json_file.txt', "r").read
     # puts JSON.parse(text_file)
     # puts @text
     # @text = text_file.to_json

@@ -18,35 +18,36 @@ public class test {
     @Required
     class A {
         @Required
-        class C{
-            @Required
-            class D{
-                @Required
-                int test_variable = 0;
-            }
+        private int variable_A = 0;
+        public int printV3(){
+            return 0;
         }
     }
     @Required
     public class B /*test*/ {
+        @Required
+        private String variable_B = "test";
+        @Required
+        public void printV2 (int x){
         
+        }
     }
     @Required
     public int x = 0 ;
     
-//    @Required
-//    private double man;
-//
-//    @Required
-//    float bo ;
+
+
+   @Required
+   private double man;
+
+   @Required
+   float bo ;
 //  
-//    @Required
-//    public String printV1 (String[] x/*test*/, int y) { // 55555
-//        return "";
-//    }
+   @Required
+   public String printV1 (String[] x/*test*/, int y) { // 55555
+       return "";
+   }
 //    
-    public void printV2 (int x){
-        
-    }
 //    @Required
 //    int variable_test = 0;
     

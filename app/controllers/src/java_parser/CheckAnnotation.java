@@ -36,7 +36,7 @@ public class CheckAnnotation {
     public void saveJsonFile() {
        String words =  changeStringFormatToJson() ; 
       
-       new WriteFile("/Users/manny/Documents/Work/ruby/CodeRoomDev/json_file.txt").writeFile(words);
+       new WriteFile("/Users/manny/Documents/Work/ruby/CodeRoomDev/app/controllers/json_file.txt").writeFile(words);
        
     }
 
@@ -52,7 +52,7 @@ public class CheckAnnotation {
     }
     
     public void readFile() throws IOException {
-        mBuffer = getBufferReaderFile("/Users/manny/Documents/Work/ruby/CodeRoomDev/src/test.java");
+        mBuffer = getBufferReaderFile("/Users/manny/Documents/Work/ruby/CodeRoomDev/app/controllers/test.java");
 //        mBuffer = getBufferReaderFile("/Users/manny/NetBeansProjects/CodeRoomDev/src/test.java");
         checkLine();
     }

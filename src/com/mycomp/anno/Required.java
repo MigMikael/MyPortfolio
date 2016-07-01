@@ -11,6 +11,6 @@ import java.lang.annotation.RetentionPolicy;
  * @author sunday
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Require {  
+public @interface Required {  
 }
 

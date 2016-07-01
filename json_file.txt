@@ -1,0 +1,1 @@
+{"class":[{"modifier":"public","name":"test","enclose":"null","attribute":[ {"modifier":"public","datatype":"int","name":"x"}],"method":[]},{"modifier":"default","name":"A","enclose":"test","attribute":[],"method":[]},{"modifier":"public","name":"B","enclose":"A","attribute":[],"method":[]},{"modifier":"default","name":"public","enclose":"A","attribute":[],"method":[]}]}

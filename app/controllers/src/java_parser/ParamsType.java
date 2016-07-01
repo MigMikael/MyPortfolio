@@ -9,26 +9,21 @@ package java_parser;
  *
  * @author sunday
  */
-public class RequiredMember {
-    
-    public RequiredMember(String modifier, String dataType, String name) {
-        mModifier = modifier;
+class ParamsType {
+        
+    public ParamsType(String dataType, String name) {
         mDataType = dataType;
         mName = name;
     }
-    
-    public String getModifier() {
-        return mModifier;
-    }
+
     public String getDataType() {
         return mDataType;
     }
-    
+
     public String getName() {
         return mName;
     }
-    
-    private String mModifier;
     private String mDataType;
-    private String mName ;
+    private String mName;
 }
+

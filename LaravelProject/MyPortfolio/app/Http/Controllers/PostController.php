@@ -17,8 +17,7 @@ class PostController extends Controller {
     {
         return view('posts.create');
     }
-
-
+    
     public function store()
     {
         $input = Request::all();
@@ -27,8 +26,7 @@ class PostController extends Controller {
 
         return redirect('post');
     }
-
-
+    
     public function show($id)
     {
         $post = Post::find($id);
@@ -36,13 +34,11 @@ class PostController extends Controller {
         return view('posts.show')->with('post', $post);
     }
 
-
     public function edit($id)
     {
 
     }
-
-
+    
     public function update($id)
     {
 

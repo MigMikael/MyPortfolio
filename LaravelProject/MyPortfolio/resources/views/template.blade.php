@@ -13,7 +13,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.deep_orange-indigo.min.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-red.min.css" />
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />

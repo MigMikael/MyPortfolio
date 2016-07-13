@@ -32,7 +32,7 @@
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                     <a class="mdl-navigation__link is-active" href="">Portfolio</a>
                     <a class="mdl-navigation__link" href="">Blog</a>
-                    <a class="mdl-navigation__link" href="">About</a>
+                    <a class="mdl-navigation__link" href="{{ url('about') }}">About</a>
                     <a class="mdl-navigation__link" href="">Contact</a>
                 </nav>
             </div>
@@ -41,13 +41,15 @@
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                 <a class="mdl-navigation__link is-active" href="">Portfolio</a>
                 <a class="mdl-navigation__link" href="">Blog</a>
-                <a class="mdl-navigation__link" href="">About</a>
+                <a class="mdl-navigation__link" href="{{ url('about') }}">About</a>
                 <a class="mdl-navigation__link" href="">Contact</a>
             </nav>
         </div>
 
         <main class="mdl-layout__content">
-            @yield('content')
+            <div class="mdl-grid portfolio-max-width">
+                @yield('content')
+            </div>
 
             <footer class="mdl-mini-footer">
                 <div class="mdl-mini-footer__left-section">

@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return 'welcome to my website';
 });
 
 
@@ -22,3 +22,9 @@ Route::resource('post', 'PostController');
 Route::resource('comment', 'CommentController');
 Route::resource('posttag', 'PostTagController');
 Route::resource('tag', 'TagController');
+
+
+Route::get('about', function()
+{
+    return view('about');
+});

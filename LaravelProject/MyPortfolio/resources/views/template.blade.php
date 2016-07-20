@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <meta charset="UTF-8">
     <title>Portfolio</title>
 
@@ -30,19 +31,19 @@
             </div>
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link is-active" href="">Portfolio</a>
-                    <a class="mdl-navigation__link" href="">Blog</a>
+                    <a class="mdl-navigation__link" href="">Portfolio</a>
+                    <a class="mdl-navigation__link is-active" href="{{ url('post') }}">Blog</a>
                     <a class="mdl-navigation__link" href="{{ url('about') }}">About</a>
-                    <a class="mdl-navigation__link" href="">Contact</a>
+                    <a class="mdl-navigation__link" href="{{ url('contact') }}">Contact</a>
                 </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                <a class="mdl-navigation__link is-active" href="">Portfolio</a>
-                <a class="mdl-navigation__link" href="">Blog</a>
+                <a class="mdl-navigation__link" href="">Portfolio</a>
+                <a class="mdl-navigation__link is-active" href="{{ url('post') }}">Blog</a>
                 <a class="mdl-navigation__link" href="{{ url('about') }}">About</a>
-                <a class="mdl-navigation__link" href="">Contact</a>
+                <a class="mdl-navigation__link" href="{{ url('contact') }}">Contact</a>
             </nav>
         </div>
 

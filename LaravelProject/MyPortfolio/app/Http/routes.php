@@ -22,7 +22,7 @@ Route::resource('post', 'PostController');
 Route::resource('comment', 'CommentController');
 Route::resource('posttag', 'PostTagController');
 Route::resource('tag', 'TagController');
-
+Route::resource('contact', 'ContactController');
 
 Route::get('about', function()
 {

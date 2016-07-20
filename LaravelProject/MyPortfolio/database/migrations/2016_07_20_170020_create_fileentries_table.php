@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePortfolioTable extends Migration
+class CreateFileentriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class CreatePortfolioTable extends Migration
      */
     public function up()
     {
-        Schema::create('portfolio', function(Blueprint $table) {
+        Schema::create('fileentries', function(Blueprint $table)
+        {
             $table->increments('id');
-            $table->string('title');
-            $table->integer('cover_image_id');
-            $table->text('description');
-            $table->string('image_id');
-            $table->text('content');
+            $table->string('filename');
+            $table->string('mime');
+            $table->string('original_filename');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreatePortfolioTable extends Migration
      */
     public function down()
     {
-        Schema::drop('portfolio');
+        Schema::drop('fileentries');
     }
 }

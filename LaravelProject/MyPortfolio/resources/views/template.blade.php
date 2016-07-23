@@ -48,7 +48,7 @@
         </div>
 
         <main class="mdl-layout__content">
-            <div class="mdl-grid portfolio-max-width">
+            <div class="mdl-grid portfolio-max-width portfolio-contact">
                 @yield('content')
             </div>
 

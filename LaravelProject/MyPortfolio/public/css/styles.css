@@ -1,3 +1,6 @@
+body {
+    background: #F5F5F5;
+}
 .portfolio-header {
   position: relative;
   /*background-image: url(../images/header-bg.jpg);*/

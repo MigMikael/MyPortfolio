@@ -1,4 +1,4 @@
-{!! Form::open(array('route' => 'route.name', 'method' => 'POST')) !!}
+{!! Form::open(['url'=>'category']) !!}
 	<ul>
 		<li>
 			{!! Form::label('name', 'Name:') !!}

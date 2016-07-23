@@ -1,52 +1,65 @@
 @extends('template')
 
 @section('content')
-	<h1>New Blog Post</h1>
-	<hr>
-	<div class="mdl-grid">
-		{!! Form::open(['url'=>'post']) !!}
-		<ul>
-			<li>
-				{!! Form::label('category_id', 'Category_id:') !!}
-				{!! Form::text('category_id') !!}
-			</li>
-			<li>
-				{!! Form::label('title', 'Title:') !!}
-				{!! Form::text('title') !!}
-			</li>
-			<li>
-				{!! Form::label('slug', 'Slug:') !!}
-				{!! Form::text('slug') !!}
-			</li>
-			<li>
-				{!! Form::label('description', 'Description:') !!}
-				{!! Form::text('description') !!}
-			</li>
-			<li>
-				{!! Form::label('summary', 'Summary:') !!}
-				{!! Form::textarea('summary') !!}
-			</li>
-			<li>
-				{!! Form::label('content', 'Content:') !!}
-				{!! Form::textarea('content') !!}
-			</li>
-			<li>
-				{!! Form::label('status', 'Status:') !!}
-				{!! Form::text('status') !!}
-			</li>
-			<li>
-				{!! Form::label('comments', 'Comments:') !!}
-				{!! Form::text('comments') !!}
-			</li>
-			<li>
-				{!! Form::label('featured', 'Featured:') !!}
-				{!! Form::text('featured') !!}
-			</li>
-			<li>
-				{!! Form::submit() !!}
-			</li>
-		</ul>
-		{!! Form::close() !!}
-	</div>
+    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Create Blog</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
 
+            {!! Form::open(['url'=>'post']) !!}
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {!! Form::text('category_id', null, ['class' => 'mdl-textfield__input']) !!}
+                {!! Form::label('category_id', 'Category_id:', ['class' => 'mdl-textfield__label']) !!}
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {!! Form::text('title', null, ['class' => 'mdl-textfield__input']) !!}
+                {!! Form::label('title', 'Title:', ['class' => 'mdl-textfield__label']) !!}
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {!! Form::text('slug', null, ['class' => 'mdl-textfield__input']) !!}
+                {!! Form::label('slug', 'Slug:', ['class' => 'mdl-textfield__label']) !!}
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {!! Form::text('description', null, ['class' => 'mdl-textfield__input']) !!}
+                {!! Form::label('description', 'Description:', ['class' => 'mdl-textfield__label']) !!}
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {!! Form::textarea('summary', null, ['class' => 'mdl-textfield__input', 'rows' => '8']) !!}
+                {!! Form::label('summary', 'Summary:', ['class' => 'mdl-textfield__label']) !!}
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {!! Form::textarea('content', null, ['class' => 'mdl-textfield__input', 'rows' => '30']) !!}
+                {!! Form::label('content', 'Content:', ['class' => 'mdl-textfield__label']) !!}
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {!! Form::text('status', null, ['class' => 'mdl-textfield__input', 'placeholder' => 'draft or publish']) !!}
+                {!! Form::label('status', 'Status:', ['class' => 'mdl-textfield__label']) !!}
+            </div>
+
+            <div class="mdl-cell mdl-cell--2-col">
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="comments_switch">
+                    {!! Form::checkbox('comments', '1', true, ['class' => 'mdl-switch__input', 'id' => 'comments_switch']) !!}
+                    <span class="mdl-switch__label">Comments</span>
+                </label>
+            </div>
+
+            <div class="mdl-cell mdl-cell--2-col">
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="featured_switch">
+                    {!! Form::checkbox('featured', '1', true, ['class' => 'mdl-switch__input', 'id' => 'featured_switch']) !!}
+                    <span class="mdl-switch__label">Featured</span>
+                </label>
+            </div>
+
+            <p>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                    Submit
+                </button>
+            </p>
+
+            {!! Form::close() !!}
+        </div>
+    </div>
 @stop

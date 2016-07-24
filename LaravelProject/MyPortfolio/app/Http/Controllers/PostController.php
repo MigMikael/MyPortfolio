@@ -41,8 +41,7 @@ class PostController extends Controller {
         Log::info('*** '. $post['comments']);
 
         if($post['comments']) {
-            $comments = Comment::where('post_id', '=', $post['id']);
-            Log::info('inside if na ja');
+            $comments = Comment::where('post_id', '=', $post['id'])->get();
             return view('posts.show')->with('post', $post)->with('comments', $comments);
         }
         else {

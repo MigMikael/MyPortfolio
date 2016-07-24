@@ -36,25 +36,32 @@
         </div>
     </div>
 
-    @include('comments.create')
-
     @if($post -> comments)
-        @foreach($comments as $comment)
-            <p>{{ $comment -> id }}</p>
-            <p>{{ $comment -> post_id }}</p>
-            <p>{{ $comment -> content }}</p>
-        @endforeach
+        <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Comments</h2>
+            </div>
+            <hr>
+            <div class="mdl-card__supporting-text">
+                <ul class="demo-list-three mdl-list">
+                    @foreach($comments as $comment)
+                        <li class="mdl-list__item mdl-list__item--three-line">
+                            <span class="mdl-list__item-primary-content">
+                              <i class="material-icons mdl-list__item-avatar">person</i>
+                              <span>{{ $comment -> user_agent }}</span>
+                              <span class="mdl-list__item-text-body">
+                                {{ $comment -> content }}
+                              </span>
+                            </span>
+                        </li>
+                        <hr>
+                    @endforeach
+                </ul>
+                <ul class="demo-list-three mdl-list">
+                    @include('comments.create')
+                </ul>
+            </div>
+        </div>
     @endif
-
-    <h1>ID : {{ $post -> id }}</h1>
-    {{--<h1>Title : {{ $post -> title }}</h1>
-    <hr>
-    <p>Slug : {{ $post -> slug }}</p>
-    <p>Description : {{ $post -> description }}</p>
-    <p>Summary : {{ $post -> summary }}</p>
-    <p>Content : {!! $post -> content !!}</p>
-    <p>Status : {{ $post -> status }}</p>--}}
-    <p>Comments : {{ $post -> comments }}</p>
-    {{--<p>Featured : {{ $post -> featured }}</p>--}}
 
 @stop

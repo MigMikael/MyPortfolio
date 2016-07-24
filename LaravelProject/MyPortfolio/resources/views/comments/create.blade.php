@@ -13,9 +13,13 @@
 			{!! Form::text('ip') !!}
 		</li>
 		<li>
-			{!! Form::label('content', 'Content:') !!}
-			{!! Form::text('content') !!}
+			{!! Form::label('useragent', 'UserAgent:') !!}
+			{!! Form::text('user_agent') !!}
 		</li>
+        <li>
+            {!! Form::label('content', 'Content:') !!}
+            {!! Form::text('content') !!}
+        </li>
 		<li>
 			{!! Form::submit() !!}
 		</li>

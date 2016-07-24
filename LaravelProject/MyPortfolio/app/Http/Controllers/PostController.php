@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Post;
 use App\Category;
+use App\Comment;
 use Request;
 use Log;
 use App\Http\Requests;
@@ -37,8 +38,16 @@ class PostController extends Controller {
     public function show($id)
     {
         $post = Post::find($id);
+        Log::info('*** '. $post['comments']);
 
-        return view('posts.show')->with('post', $post);
+        if($post['comments']) {
+            $comments = Comment::where('post_id', '=', $post['id']);
+            Log::info('inside if na ja');
+            return view('posts.show')->with('post', $post)->with('comments', $comments);
+        }
+        else {
+            return view('posts.show')->with('post', $post);
+        }
     }
 
     public function edit($id)

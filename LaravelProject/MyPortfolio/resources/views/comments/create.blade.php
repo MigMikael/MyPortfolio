@@ -1,4 +1,4 @@
-{!! Form::open(array('route' => 'route.name', 'method' => 'POST')) !!}
+{!! Form::open(['url'=>'comment']) !!}
 	<ul>
 		<li>
 			{!! Form::label('post_id', 'Post_id:') !!}
@@ -13,8 +13,8 @@
 			{!! Form::text('ip') !!}
 		</li>
 		<li>
-			{!! Form::label('user_agent', 'User_agent:') !!}
-			{!! Form::text('user_agent') !!}
+			{!! Form::label('content', 'Content:') !!}
+			{!! Form::text('content') !!}
 		</li>
 		<li>
 			{!! Form::submit() !!}

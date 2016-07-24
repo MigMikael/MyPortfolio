@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Post;
+use App\Category;
 use Request;
 use Log;
 use App\Http\Requests;
@@ -15,7 +16,13 @@ class PostController extends Controller {
 
     public function create()
     {
-        return view('posts.create');
+        $c = Category::all();
+        $categories = [];
+        for($i = 0; $i < sizeof($c); $i++){
+            $categories[$c[$i]['id']] = $c[$i]['name'];
+            //Log::info('#### '. $c[$i]['id'].' '.$c[$i]['name']);
+        }
+        return view('posts.create')->with('categories', $categories);
     }
     
     public function store()

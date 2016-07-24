@@ -1,5 +1,5 @@
 body {
-    background: #F5F5F5;
+    background: #ECEFF1;
 }
 .portfolio-header {
   position: relative;
@@ -162,7 +162,7 @@ img.article-image {
 }
 
 .portfolio-contact form {
-  max-width: 550px;
+  max-width: 600px;
   margin: auto;
 }
 

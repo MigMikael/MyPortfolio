@@ -1,3 +1,6 @@
+@extends('template')
+
+@section('content')
 {!! Form::open(['url'=>'category']) !!}
 	<ul>
 		<li>
@@ -17,3 +20,4 @@
 		</li>
 	</ul>
 {!! Form::close() !!}
+@stop

@@ -9,8 +9,10 @@
             <img class="article-image" src="../images/portfolio-example-01.jpg" border="0" alt="">
         </div>
         <div class="mdl-card__supporting-text">
-            <strong>Category</strong>
-            <span>{{ $post -> category_id }}</span>
+            <strong>Category :</strong>
+            <a href="{{ url('category') }}">
+                <span>{{ $category -> name }}</span>
+            </a>
         </div>
 
         <div class="mdl-grid portfolio-copy">

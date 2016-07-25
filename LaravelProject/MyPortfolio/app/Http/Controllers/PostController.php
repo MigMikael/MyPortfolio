@@ -38,14 +38,16 @@ class PostController extends Controller {
     public function show($id)
     {
         $post = Post::find($id);
-        Log::info('*** '. $post['comments']);
+        //Log::info('*** '. $post['comments']);
+        $category = Category::findOrFail($post['category_id']);
+        //Log::info('*** '. $category['name']);
 
         if($post['comments']) {
             $comments = Comment::where('post_id', '=', $post['id'])->get();
-            return view('posts.show')->with('post', $post)->with('comments', $comments);
+            return view('posts.show')->with('post', $post)->with('comments', $comments)->with('category', $category);
         }
         else {
-            return view('posts.show')->with('post', $post);
+            return view('posts.show')->with('post', $post)->with('category', $category);
         }
     }
 

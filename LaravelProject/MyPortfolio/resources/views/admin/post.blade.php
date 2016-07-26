@@ -1,3 +1,4 @@
+{{--Blog Post in Admin View--}}
 @extends('template')
 
 @section('content')
@@ -13,8 +14,16 @@
                 {{ $post->description }}
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ url('post/'.$post->id) }}">
-                    Read more
+                <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{ url('post/'.$post->id) }}">
+                    View
+                </a>
+
+                <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="">
+                    edit
+                </a>
+
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="">
+                    delete
                 </a>
             </div>
             <div class="mdl-card__menu">

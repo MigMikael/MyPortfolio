@@ -11,7 +11,7 @@ class PostController extends Controller {
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::where('status', '=', 'publish')->orderBy('created_at', 'desc')->get();
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -65,6 +65,13 @@ class PostController extends Controller {
     public function destroy($id)
     {
 
+    }
+
+    public function admin()
+    {
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        //$posts = Post::all()->orderBy('created_at', 'desc')->get(); wrong usage
+        return view('admin/post')->with('posts', $posts);
     }
   
 }

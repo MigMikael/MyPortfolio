@@ -19,6 +19,7 @@ Route::get('/', function()
 
 Route::resource('category', 'CategoryController');
 Route::resource('post', 'PostController');
+Route::get('admin/post', 'PostController@admin');
 Route::resource('comment', 'CommentController');
 Route::resource('posttag', 'PostTagController');
 Route::resource('tag', 'TagController');
@@ -31,5 +32,5 @@ Route::get('about', function()
 
 Route::get('admin', function()
 {
-    return view('admin');
+    return view('admin/admin');
 });

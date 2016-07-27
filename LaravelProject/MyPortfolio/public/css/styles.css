@@ -2,8 +2,8 @@ body {
     background: #ECEFF1;
 }
 .portfolio-header {
-  position: relative;
-  /*background-image: url(../images/header-bg.jpg);*/
+  position: center;
+  background-image: url(../images/header-bg.png);
 }
 
 .portfolio-header .mdl-layout__header-row {
@@ -173,4 +173,24 @@ footer {
 
 .mdl-mini-footer {
     background-color: #3F51B5;
+}
+
+.publish-card.mdl-card {
+    background: #5C6BC0;
+}
+
+.draft-card.mdl-card {
+    background: #EF5350;
+}
+
+.publish-card > .mdl-card__title,
+.publish-card > .mdl-card__actions,
+.publish-card > .mdl-card__actions > .mdl-button {
+    color: #fff;
+}
+
+.draft-card > .mdl-card__title,
+.draft-card > .mdl-card__actions,
+.draft-card > .mdl-card__actions > .mdl-button {
+    color: #fff;
 }

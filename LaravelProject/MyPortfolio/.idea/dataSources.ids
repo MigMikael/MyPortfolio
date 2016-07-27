@@ -1,7 +1,374 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - MyPortfolio@localhost" uuid="e30dc93c-12d0-4b2c-bc24-401d554bdc4b">
-    <database-info product="MySQL" version="5.5.49-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="MyPortfolio">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="ComProI"/>
+      <schema id="3" name="information_schema"/>
+      <schema id="4" name="mysql"/>
+      <schema id="5" name="performance_schema"/>
+      <schema id="6" name="testDB"/>
+      <table id="7" parent="1" name="blog_categories"/>
+      <table id="8" parent="1" name="blog_comments"/>
+      <table id="9" parent="1" name="blog_post_tag"/>
+      <table id="10" parent="1" name="blog_posts"/>
+      <table id="11" parent="1" name="blog_tags"/>
+      <table id="12" parent="1" name="migrations"/>
+      <table id="13" parent="1" name="users"/>
+      <table id="14" parent="1" name="contact"/>
+      <table id="15" parent="1" name="fileentries"/>
+      <table id="16" parent="1" name="portfolio"/>
+      <column id="17" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="18" parent="7" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="19" parent="7" name="slug">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="20" parent="7" name="description">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="21" parent="7" name="blog_categories_slug_unique">
+        <columns>slug</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="22" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="23" parent="7" name="blog_categories_slug_unique">
+        <columns>slug</columns>
+        <underlying-index>blog_categories_slug_unique</underlying-index>
+      </key>
+      <column id="24" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="25" parent="8" name="post_id">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned|0</data-type>
+      </column>
+      <column id="26" parent="8" name="status">
+        <mandatory>1</mandatory>
+        <data-type>enum(&apos;pending&apos;, &apos;publish&apos;, &apos;spam&apos;)|0</data-type>
+      </column>
+      <column id="27" parent="8" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="28" parent="8" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="29" parent="8" name="deleted_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="30" parent="8" name="ip">
+        <mandatory>1</mandatory>
+        <data-type>varchar(15)|0</data-type>
+      </column>
+      <column id="31" parent="8" name="user_agent">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="32" parent="8" name="content">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <index id="33" parent="8" name="blog_comments_ip_index">
+        <columns>ip</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="34" parent="8" name="blog_comments_post_id_index">
+        <columns>post_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="35" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="36" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="37" parent="9" name="tag_id">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned|0</data-type>
+      </column>
+      <column id="38" parent="9" name="post_id">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned|0</data-type>
+      </column>
+      <index id="39" parent="9" name="blog_post_tag_post_id_index">
+        <columns>post_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="40" parent="9" name="blog_post_tag_tag_id_index">
+        <columns>tag_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="41" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="42" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="43" parent="10" name="category_id">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned|0</data-type>
+      </column>
+      <column id="44" parent="10" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="45" parent="10" name="slug">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="46" parent="10" name="description">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="47" parent="10" name="summary">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="48" parent="10" name="content">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="49" parent="10" name="status">
+        <mandatory>1</mandatory>
+        <data-type>enum(&apos;draft&apos;, &apos;publish&apos;)|0</data-type>
+      </column>
+      <column id="50" parent="10" name="comments">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="51" parent="10" name="featured">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+      </column>
+      <column id="52" parent="10" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="53" parent="10" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="54" parent="10" name="deleted_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <index id="55" parent="10" name="blog_posts_category_id_index">
+        <columns>category_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="56" parent="10" name="blog_posts_comments_index">
+        <columns>comments</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="57" parent="10" name="blog_posts_featured_index">
+        <columns>featured</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="58" parent="10" name="blog_posts_slug_unique">
+        <columns>slug</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="59" parent="10" name="blog_posts_status_index">
+        <columns>status</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="60" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="61" parent="10" name="blog_posts_slug_unique">
+        <columns>slug</columns>
+        <underlying-index>blog_posts_slug_unique</underlying-index>
+      </key>
+      <column id="62" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="63" parent="11" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="64" parent="11" name="slug">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="65" parent="11" name="blog_tags_slug_unique">
+        <columns>slug</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="66" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="67" parent="11" name="blog_tags_slug_unique">
+        <columns>slug</columns>
+        <underlying-index>blog_tags_slug_unique</underlying-index>
+      </key>
+      <column id="68" parent="12" name="migration">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="69" parent="12" name="batch">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="70" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="71" parent="13" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="72" parent="13" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="73" parent="13" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="74" parent="13" name="remember_token">
+        <data-type>varchar(100)|0</data-type>
+      </column>
+      <column id="75" parent="13" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="76" parent="13" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <index id="77" parent="13" name="users_email_unique">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="78" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="79" parent="13" name="users_email_unique">
+        <columns>email</columns>
+        <underlying-index>users_email_unique</underlying-index>
+      </key>
+      <column id="80" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="81" parent="14" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="82" parent="14" name="description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="83" parent="14" name="url">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="84" parent="14" name="image">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="85" parent="14" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="86" parent="14" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <key id="87" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="88" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="89" parent="15" name="filename">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="90" parent="15" name="mime">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="91" parent="15" name="original_filename">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="92" parent="15" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="93" parent="15" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <key id="94" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="95" parent="16" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="96" parent="16" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="97" parent="16" name="cover_image_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="98" parent="16" name="description">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="99" parent="16" name="image_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="100" parent="16" name="content">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="101" parent="16" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="102" parent="16" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <key id="103" parent="16" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - MyPortfolio@localhost [2]" uuid="7342e843-22f6-4673-baa1-45f048419c92">
+    <database-info product="MySQL" version="5.5.50-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -10,257 +377,362 @@
       <schema id="1" name="MyPortfolio">
         <visible>1</visible>
       </schema>
-      <table id="2" parent="1" name="blog_categories"/>
-      <table id="3" parent="1" name="blog_comments"/>
-      <table id="4" parent="1" name="blog_post_tag"/>
-      <table id="5" parent="1" name="blog_posts"/>
-      <table id="6" parent="1" name="blog_tags"/>
-      <table id="7" parent="1" name="migrations"/>
-      <table id="8" parent="1" name="users"/>
-      <column id="9" parent="2" name="id">
+      <schema id="2" name="ComProI"/>
+      <schema id="3" name="information_schema"/>
+      <schema id="4" name="mysql"/>
+      <schema id="5" name="performance_schema"/>
+      <schema id="6" name="testDB"/>
+      <table id="7" parent="1" name="blog_categories"/>
+      <table id="8" parent="1" name="blog_comments"/>
+      <table id="9" parent="1" name="blog_post_tag"/>
+      <table id="10" parent="1" name="blog_posts"/>
+      <table id="11" parent="1" name="blog_tags"/>
+      <table id="12" parent="1" name="contact"/>
+      <table id="13" parent="1" name="fileentries"/>
+      <table id="14" parent="1" name="migrations"/>
+      <table id="15" parent="1" name="portfolio"/>
+      <table id="16" parent="1" name="users"/>
+      <column id="17" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="10" parent="2" name="name">
+      <column id="18" parent="7" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="11" parent="2" name="slug">
+      <column id="19" parent="7" name="slug">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="12" parent="2" name="description">
+      <column id="20" parent="7" name="description">
         <data-type>varchar(255)|0</data-type>
       </column>
-      <index id="13" parent="2" name="blog_categories_slug_unique">
+      <index id="21" parent="7" name="blog_categories_slug_unique">
         <columns>slug</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="14" parent="2" name="blog_categories_slug_unique">
+      <key id="22" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="23" parent="7" name="blog_categories_slug_unique">
         <columns>slug</columns>
         <underlying-index>blog_categories_slug_unique</underlying-index>
       </key>
-      <key id="15" parent="2" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="16" parent="3" name="id">
+      <column id="24" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="17" parent="3" name="post_id">
+      <column id="25" parent="8" name="post_id">
         <mandatory>1</mandatory>
         <data-type>tinyint(3) unsigned|0</data-type>
       </column>
-      <column id="18" parent="3" name="status">
+      <column id="26" parent="8" name="status">
         <mandatory>1</mandatory>
         <data-type>enum(&apos;pending&apos;, &apos;publish&apos;, &apos;spam&apos;)|0</data-type>
       </column>
-      <column id="19" parent="3" name="created_at">
+      <column id="27" parent="8" name="created_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <column id="20" parent="3" name="updated_at">
+      <column id="28" parent="8" name="updated_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <column id="21" parent="3" name="deleted_at">
+      <column id="29" parent="8" name="deleted_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <column id="22" parent="3" name="ip">
+      <column id="30" parent="8" name="ip">
         <mandatory>1</mandatory>
         <data-type>varchar(15)|0</data-type>
       </column>
-      <column id="23" parent="3" name="user_agent">
+      <column id="31" parent="8" name="user_agent">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <index id="24" parent="3" name="blog_comments_ip_index">
+      <column id="32" parent="8" name="content">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <index id="33" parent="8" name="blog_comments_ip_index">
         <columns>ip</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="25" parent="3" name="blog_comments_post_id_index">
+      <index id="34" parent="8" name="blog_comments_post_id_index">
         <columns>post_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="26" parent="3" name="PRIMARY">
+      <key id="35" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="27" parent="4" name="id">
+      <column id="36" parent="9" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="28" parent="4" name="tag_id">
+      <column id="37" parent="9" name="tag_id">
         <mandatory>1</mandatory>
         <data-type>tinyint(3) unsigned|0</data-type>
       </column>
-      <column id="29" parent="4" name="post_id">
+      <column id="38" parent="9" name="post_id">
         <mandatory>1</mandatory>
         <data-type>tinyint(3) unsigned|0</data-type>
       </column>
-      <index id="30" parent="4" name="blog_post_tag_post_id_index">
+      <index id="39" parent="9" name="blog_post_tag_post_id_index">
         <columns>post_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="31" parent="4" name="blog_post_tag_tag_id_index">
+      <index id="40" parent="9" name="blog_post_tag_tag_id_index">
         <columns>tag_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="32" parent="4" name="PRIMARY">
+      <key id="41" parent="9" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="33" parent="5" name="id">
+      <column id="42" parent="10" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="34" parent="5" name="category_id">
+      <column id="43" parent="10" name="category_id">
         <mandatory>1</mandatory>
         <data-type>tinyint(3) unsigned|0</data-type>
       </column>
-      <column id="35" parent="5" name="title">
+      <column id="44" parent="10" name="title">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="36" parent="5" name="slug">
+      <column id="45" parent="10" name="slug">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="37" parent="5" name="description">
+      <column id="46" parent="10" name="description">
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="38" parent="5" name="summary">
+      <column id="47" parent="10" name="summary">
         <mandatory>1</mandatory>
         <data-type>text|0</data-type>
       </column>
-      <column id="39" parent="5" name="content">
+      <column id="48" parent="10" name="content">
         <mandatory>1</mandatory>
         <data-type>text|0</data-type>
       </column>
-      <column id="40" parent="5" name="status">
+      <column id="49" parent="10" name="status">
         <mandatory>1</mandatory>
         <data-type>enum(&apos;draft&apos;, &apos;publish&apos;)|0</data-type>
       </column>
-      <column id="41" parent="5" name="comments">
+      <column id="50" parent="10" name="comments">
         <mandatory>1</mandatory>
         <data-type>tinyint(1)|0</data-type>
       </column>
-      <column id="42" parent="5" name="featured">
+      <column id="51" parent="10" name="featured">
         <mandatory>1</mandatory>
         <data-type>tinyint(1)|0</data-type>
       </column>
-      <column id="43" parent="5" name="created_at">
+      <column id="52" parent="10" name="created_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <column id="44" parent="5" name="updated_at">
+      <column id="53" parent="10" name="updated_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <column id="45" parent="5" name="deleted_at">
+      <column id="54" parent="10" name="deleted_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <index id="46" parent="5" name="blog_posts_category_id_index">
+      <index id="55" parent="10" name="blog_posts_category_id_index">
         <columns>category_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="47" parent="5" name="blog_posts_comments_index">
+      <index id="56" parent="10" name="blog_posts_comments_index">
         <columns>comments</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="48" parent="5" name="blog_posts_featured_index">
+      <index id="57" parent="10" name="blog_posts_featured_index">
         <columns>featured</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="49" parent="5" name="blog_posts_slug_unique">
+      <index id="58" parent="10" name="blog_posts_slug_unique">
         <columns>slug</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <index id="50" parent="5" name="blog_posts_status_index">
+      <index id="59" parent="10" name="blog_posts_status_index">
         <columns>status</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="51" parent="5" name="blog_posts_slug_unique">
-        <columns>slug</columns>
-        <underlying-index>blog_posts_slug_unique</underlying-index>
-      </key>
-      <key id="52" parent="5" name="PRIMARY">
+      <key id="60" parent="10" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="53" parent="6" name="id">
+      <key id="61" parent="10" name="blog_posts_slug_unique">
+        <columns>slug</columns>
+        <underlying-index>blog_posts_slug_unique</underlying-index>
+      </key>
+      <column id="62" parent="11" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="54" parent="6" name="name">
+      <column id="63" parent="11" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="55" parent="6" name="slug">
+      <column id="64" parent="11" name="slug">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <index id="56" parent="6" name="blog_tags_slug_unique">
+      <index id="65" parent="11" name="blog_tags_slug_unique">
         <columns>slug</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="57" parent="6" name="blog_tags_slug_unique">
-        <columns>slug</columns>
-        <underlying-index>blog_tags_slug_unique</underlying-index>
-      </key>
-      <key id="58" parent="6" name="PRIMARY">
+      <key id="66" parent="11" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="59" parent="7" name="migration">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)|0</data-type>
-      </column>
-      <column id="60" parent="7" name="batch">
-        <mandatory>1</mandatory>
-        <data-type>int(11)|0</data-type>
-      </column>
-      <column id="61" parent="8" name="id">
+      <key id="67" parent="11" name="blog_tags_slug_unique">
+        <columns>slug</columns>
+        <underlying-index>blog_tags_slug_unique</underlying-index>
+      </key>
+      <column id="68" parent="12" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="62" parent="8" name="name">
+      <column id="69" parent="12" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="63" parent="8" name="email">
+      <column id="70" parent="12" name="description">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="64" parent="8" name="password">
+      <column id="71" parent="12" name="url">
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="65" parent="8" name="remember_token">
+      <column id="72" parent="12" name="image">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="73" parent="12" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="74" parent="12" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <key id="75" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="76" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="77" parent="13" name="filename">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="78" parent="13" name="mime">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="79" parent="13" name="original_filename">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="80" parent="13" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="81" parent="13" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <key id="82" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="83" parent="14" name="migration">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="84" parent="14" name="batch">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="85" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="86" parent="15" name="title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="87" parent="15" name="cover_image_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="88" parent="15" name="description">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="89" parent="15" name="image_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="90" parent="15" name="content">
+        <mandatory>1</mandatory>
+        <data-type>text|0</data-type>
+      </column>
+      <column id="91" parent="15" name="created_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="92" parent="15" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <key id="93" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="94" parent="16" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="95" parent="16" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="96" parent="16" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="97" parent="16" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="98" parent="16" name="remember_token">
         <data-type>varchar(100)|0</data-type>
       </column>
-      <column id="66" parent="8" name="created_at">
+      <column id="99" parent="16" name="created_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <column id="67" parent="8" name="updated_at">
+      <column id="100" parent="16" name="updated_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <index id="68" parent="8" name="users_email_unique">
+      <index id="101" parent="16" name="users_email_unique">
         <columns>email</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="69" parent="8" name="PRIMARY">
+      <key id="102" parent="16" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="70" parent="8" name="users_email_unique">
+      <key id="103" parent="16" name="users_email_unique">
         <columns>email</columns>
         <underlying-index>users_email_unique</underlying-index>
       </key>

@@ -7,5 +7,11 @@
       <introspection-scope>MyPortfolio:*</introspection-scope>
       <resolve-scope>MyPortfolio:*</resolve-scope>
     </data-source>
+    <data-source name="MySQL - MyPortfolio@localhost [2]" uuid="7342e843-22f6-4673-baa1-45f048419c92">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-scope>MyPortfolio:*</introspection-scope>
+      <resolve-scope>MyPortfolio:*</resolve-scope>
+    </data-source>
   </component>
 </project>

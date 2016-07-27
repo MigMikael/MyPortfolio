@@ -25,6 +25,10 @@ Route::resource('posttag', 'PostTagController');
 Route::resource('tag', 'TagController');
 Route::resource('contact', 'ContactController');
 
+Route::get('fileentry', 'FileEntryController@index');
+Route::get('fileentry/get/{filename}', ['as' => 'getentry', 'uses' => 'FileEntryController@get']);
+Route::post('fileentry/add', ['as' => 'addentry', 'uses' => 'FileEntryController@add']);
+
 Route::get('about', function()
 {
     return view('about');

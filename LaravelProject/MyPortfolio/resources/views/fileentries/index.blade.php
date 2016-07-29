@@ -17,10 +17,9 @@
     <h1>Picture List</h1>
     <ul>
         @foreach($entries as $entry)
-            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp portfolio-card">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
                 <div class="mdl-card__media">
-                    {{--<img class="article-image" src="{{Storage::url($entry->filename)}}" border="0" alt="{{ $entry->filename }}">--}}
-                    <img src="{{route('getentry', $entry->filename)}}"alt="ALT NAME"/>
+                    <img class="article-image" src="{{Storage::url($entry->filename)}}" border="0" alt="{{ $entry->filename }}">
                 </div>
                 <div class="mdl-card__title">
                     <h2 class="mdl-card__title-text">{{ $entry->filename }}</h2>

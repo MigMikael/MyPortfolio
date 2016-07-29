@@ -53,12 +53,25 @@ class PostController extends Controller {
 
     public function edit($id)
     {
-
+        $c = Category::all();
+        $categories = [];
+        for($i = 0; $i < sizeof($c); $i++){
+            $categories[$c[$i]['id']] = $c[$i]['name'];
+            //Log::info('#### '. $c[$i]['id'].' '.$c[$i]['name']);
+        }
+        $post = Post::findOrFail($id);
+        return view('posts.edit')->with('post', $post)->with('categories', $categories);
     }
     
     public function update($id)
     {
+        $post = Post::findOrFail($id);
 
+        $newPost = Request::all();
+
+        $post->update($newPost);
+
+        return redirect('admin/post');
     }
 
 

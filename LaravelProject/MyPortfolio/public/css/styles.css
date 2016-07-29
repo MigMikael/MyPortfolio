@@ -2,8 +2,11 @@ body {
     background: #ECEFF1;
 }
 .portfolio-header {
-  position: center;
-  background-image: url(../images/header-bg.png);
+
+  background-image: url(../images/ocean.gif);
+  background-position: center;
+    /* Make the background image cover the area of the <div>, and clip the excess */
+  background-size: cover;
 }
 
 .portfolio-header .mdl-layout__header-row {
@@ -46,7 +49,7 @@ body {
 }
 
 .portfolio-navigation-row {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.125);
   text-transform: uppercase;
   height: 45px;
 }
@@ -61,7 +64,7 @@ body {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  line-height: 42px;
+  line-height: 40px;
 }
 
 .portfolio-header .mdl-layout__drawer-button {
@@ -69,8 +72,9 @@ body {
 }
 
 .portfolio-navigation-row .is-active {
-  position: relative;
-  font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.145);
+    position: relative;
+    font-weight: bold;
 }
 
 .portfolio-navigation-row .is-active:after {
@@ -122,7 +126,7 @@ img.article-image {
 }
 
 .portfolio-copy {
-  max-width: 550px;
+  max-width: 600px;
 }
 
 .no-padding {
@@ -167,12 +171,13 @@ img.article-image {
 }
 
 footer {
-  /*background-image: url(../images/footer-background.png);*/
-  background-size: cover;
+ /* background-image: url(../images/firewave.gif);
+  background-position: center;
+  background-size: cover;*/
 }
 
 .mdl-mini-footer {
-    background-color: #3F51B5;
+    background-color: #5C6BC0;
 }
 
 .publish-card.mdl-card {

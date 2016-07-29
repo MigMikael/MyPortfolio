@@ -9,14 +9,15 @@
                     <h2 class="mdl-card__title-text">{{ $post->title }}</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    {{ $post->status  }}
+                    Update : {{ $post->updated_at }}
+                    Status : {{ $post->status  }}
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ url('post/'.$post->id) }}">
                         View
                     </a>
 
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ url('post/'.$post->id.'/edit') }}">
                         edit
                     </a>
 
@@ -31,14 +32,15 @@
                     <h2 class="mdl-card__title-text">{{ $post->title }}</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    {{ $post->status  }}
+                    Update : {{ $post->updated_at }}
+                    Status : {{ $post->status  }}
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ url('post/'.$post->id) }}">
                         View
                     </a>
 
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ url('post/'.$post->id.'/edit') }}">
                         edit
                     </a>
 

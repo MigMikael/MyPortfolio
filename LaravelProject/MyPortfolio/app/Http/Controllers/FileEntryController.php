@@ -35,7 +35,7 @@ class FileEntryController extends Controller
 
         $entry->save();
 
-        return redirect('fileentry');
+        return back();
     }
 
     public function get($filename){

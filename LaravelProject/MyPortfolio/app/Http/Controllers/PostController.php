@@ -62,8 +62,10 @@ class PostController extends Controller {
             $categories[$c[$i]['id']] = $c[$i]['name'];
             //Log::info('#### '. $c[$i]['id'].' '.$c[$i]['name']);
         }
+        $images = Fileentry::all();
         $post = Post::findOrFail($id);
-        return view('posts.edit')->with('post', $post)->with('categories', $categories);
+
+        return view('posts.edit')->with('post', $post)->with('categories', $categories)->with('images', $images);
     }
     
     public function update($id)

@@ -37,7 +37,7 @@ class CommentController extends Controller {
 
         Comment::create($input);
 
-        return redirect('post/create');
+        return back();
     }
 
     /**

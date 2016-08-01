@@ -101,7 +101,7 @@
                 create
             </a>
 
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{--{{ url('post/'.$category->id) }}--}}">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ url('contact') }}">
                 view all
             </a>
         </div>

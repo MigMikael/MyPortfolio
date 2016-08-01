@@ -9,7 +9,7 @@
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">{{ $post->title }}</h2>
             </div>
-            <div class="mdl-card__supporting-text">
+            <div class="mdl-card__supporting-text mdl-card--expand">
                 {{ $post->description }}
             </div>
             <div class="mdl-card__actions mdl-card--border">

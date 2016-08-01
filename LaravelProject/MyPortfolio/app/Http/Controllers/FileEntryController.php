@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
 use App\Http\Requests;
+use Log;
+
 
 class FileEntryController extends Controller
 {
@@ -24,12 +26,12 @@ class FileEntryController extends Controller
     {
         $file = Request::file('filefield');
         $extension = $file->getClientOriginalExtension();
-
-        Storage::disk('local')->put($file->getFilename().'.'.$extension, File::get($file));
+        Storage::disk('public')->put($file->getFilename().'.'.$extension,  File::get($file));
         $entry = new Fileentry();
         $entry->mime = $file->getClientMimeType();
         $entry->original_filename = $file->getClientOriginalName();
         $entry->filename = $file->getFilename().'.'.$extension;
+        Log::info('#### Store File');
 
         $entry->save();
 
@@ -37,9 +39,18 @@ class FileEntryController extends Controller
     }
 
     public function get($filename){
+        /*$url = Storage::url($filename);
+        Log::info('#### Get File', $url);
+
+        return 'this is get';*/
+        Log::info('#### Filename '.$filename);
+
+        $filename = str_replace('_','.',$filename);
+
+        Log::info('#### Change Filename '.$filename);
 
         $entry = Fileentry::where('filename', '=', $filename)->firstOrFail();
-        $file = Storage::disk('local')->get($entry->filename);
+        $file = Storage::disk('public')->get($entry->filename);
 
         return (new Response($file, 200))->header('Content-Type', $entry->mime);
     }

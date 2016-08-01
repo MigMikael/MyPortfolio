@@ -18,7 +18,7 @@
     @foreach($entries as $entry)
         <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
             <div class="mdl-card__media">
-                <img src="{{route('getentry', str_replace('.','_',$entry->filename))}}" border="0" alt="" width="100px" height="100px">
+                <img src="{{route('getentry', str_replace('.','_',$entry->filename))}}" border="0" alt="" width="200px" height="200px">
             </div>
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">{{ $entry->filename }}</h2>

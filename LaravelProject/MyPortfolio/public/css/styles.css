@@ -199,3 +199,8 @@ footer {
 .draft-card > .mdl-card__actions > .mdl-button {
     color: #fff;
 }
+
+.image-list-icon {
+    width: 20%;
+    height: 20%;
+}

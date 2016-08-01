@@ -39,14 +39,7 @@ class FileEntryController extends Controller
     }
 
     public function get($filename){
-        /*$url = Storage::url($filename);
-        Log::info('#### Get File', $url);
-
-        return 'this is get';*/
-        Log::info('#### Filename '.$filename);
-
         $filename = str_replace('_','.',$filename);
-
         Log::info('#### Change Filename '.$filename);
 
         $entry = Fileentry::where('filename', '=', $filename)->firstOrFail();

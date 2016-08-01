@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Fileentry;
 use App\Post;
 use App\Category;
 use App\Comment;
@@ -23,7 +24,9 @@ class PostController extends Controller {
             $categories[$c[$i]['id']] = $c[$i]['name'];
             //Log::info('#### '. $c[$i]['id'].' '.$c[$i]['name']);
         }
-        return view('posts.create')->with('categories', $categories);
+
+        $images = Fileentry::all();
+        return view('posts.create')->with('categories', $categories)->with('images', $images);
     }
     
     public function store()
